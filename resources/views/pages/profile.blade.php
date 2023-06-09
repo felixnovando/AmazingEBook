@@ -7,10 +7,10 @@
         @method('put')
         @csrf
         <div>
-            @if(strcmp(\Illuminate\Support\Facades\Auth::user()->display_picture_link, "") != 0)
+            @if(strcmp(\Illuminate\Support\Facades\Auth::user()->display_picture_link, "-") != 0)
                 <img class="me-5" style="width: 250px; height: 250px; object-fit: cover" src="{{\Illuminate\Support\Facades\URL::asset(\Illuminate\Support\Facades\Auth::user()->display_picture_link)}}">
             @else
-                <img style="width: 250px; height: 250px; object-fit: cover" src="{{asset("blank_profile.png")}}">
+                <img style="width: 250px; height: 250px; object-fit: cover" src="/storage/default.jpg">
             @endif
         </div>
         <div class="d-flex h-100 flex-column justify-content-evenly align-items-center">
